@@ -1,0 +1,59 @@
+import random
+#from art import logo
+#print (logo)
+print("Welcome to Guessing Number Game!\n")
+print("I'm thinking of number between 1 and 100.")
+game_level = input("Choose a difficult level. Type 'easy' or 'hard': ")
+GUESS_NUMBER = random.randint(0,100)
+game_is_over = False
+
+def game():
+
+  if game_level == 'easy':
+    guess_attempts = 10
+    print("You have 10 attempts remaning to guess the number")
+    while guess_attempts != 0:  
+      make_guess = int(input("Make a guess: "))
+      if make_guess > GUESS_NUMBER:
+        guess_attempts -= 1
+        print ("Too high")
+        print("Guess again.")
+        print(f"You have {guess_attempts} attempts remaning to guess a number.")  
+      elif make_guess < GUESS_NUMBER:
+        guess_attempts -= 1
+        print("Too low")
+        print("Guess again.")
+        print(f"You have {guess_attempts} attempts remaning to guess a number.")
+      if make_guess == GUESS_NUMBER:
+        print(f"Guess number is {GUESS_NUMBER}\n")
+        print("Congrations! You get it!")
+        break
+      if guess_attempts == 0:
+        print("You Lose :(")
+        
+  if game_level == 'hard':
+    guess_attempts = 5
+    print("You have 5 attempts remaning to guess the number")
+    while guess_attempts != 0:  
+      make_guess = int(input("Make a guess: "))
+      if make_guess > GUESS_NUMBER:
+        guess_attempts -= 1
+        print ("Too high")
+        print("Guess again.")
+        print(f"You have {guess_attempts} attempts remaning to guess a number.")  
+      elif make_guess < GUESS_NUMBER:
+        guess_attempts -= 1
+        print("Too low")
+        print("Guess again.")
+        print(f"You have {guess_attempts} attempts remaning to guess a number.")
+      if make_guess == GUESS_NUMBER:
+        print(f"Guess number is {GUESS_NUMBER}\n")
+        print("Congrations! You get it!")
+        break
+      if guess_attempts == 0:
+        print("You Lose :(")
+    
+    
+game()
+
+
